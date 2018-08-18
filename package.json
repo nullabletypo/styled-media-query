@@ -10,9 +10,9 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "yarn build:common && yarn build:es && yarn build:browser",
-    "build:common": "rollup -c --environment COMMON,PRODUCTION",
-    "build:es": "rollup -c --environment ES",
-    "build:browser": "rollup -c --environment BROWSER,PRODUCTION"
+    "build:common": "rollup -c --environment FORMAT:COMMON,PRODUCTION",
+    "build:es": "rollup -c --environment FORMAT:ES",
+    "build:browser": "rollup -c --environment FORMAT:BROWSER,PRODUCTION"
   },
   "files": ["dist", "src"],
   "author": "Mohammad Rajabifard <mo.rajbi@gmail.com>",

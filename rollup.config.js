@@ -4,7 +4,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import uglify from 'rollup-plugin-uglify';
 import gzip from 'rollup-plugin-gzip';
 
-const prod = process.env.PRODUCTION;
+const prod = process.env.PRODUCTION === 'true';
 
 let config = {
   entry: 'src/index.js',
@@ -21,7 +21,8 @@ let plugins = [
 
 if (prod) plugins.push(uglify());
 
-if (process.env.BROWSER) {
+
+if (process.env.FORMAT === 'BROWSER') {
   config = Object.assign(config, {
     dest: 'dist/styled-media-query.umd.js',
     format: 'umd',
@@ -31,7 +32,7 @@ if (process.env.BROWSER) {
     plugins,
   })
 
-} else if (process.env.COMMON) {
+} else if (process.env.FORMAT === 'COMMON') {
   config = Object.assign(config, {
     plugins: [
       resolve(),
@@ -42,7 +43,7 @@ if (process.env.BROWSER) {
     format: 'cjs',
   })
 
-} else if (process.env.ES) {
+} else if (process.env.FORMAT === 'ES') {
   config = Object.assign(config, {
     plugins: [
       resolve(),
