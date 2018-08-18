@@ -5,6 +5,7 @@
   "main": "dist/styled-media-query.common.js",
   "module": "dist/styled-media-query.es.js",
   "jsnext:main": "dist/styled-media-query.es.js",
+  "types": "index.d.ts",
   "repository": "git@github.com:morajabi/styled-media-query.git",
   "keywords": ["styled-components", "media-query", "media", "breakpoint"],
   "scripts": {
@@ -14,7 +15,7 @@
     "build:es": "rollup -c --environment FORMAT:ES",
     "build:browser": "rollup -c --environment FORMAT:BROWSER,PRODUCTION"
   },
-  "files": ["dist", "src"],
+  "files": ["dist", "src", "index.d.ts"],
   "author": "Mohammad Rajabifard <mo.rajbi@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
